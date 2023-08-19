@@ -4,6 +4,15 @@
 
 @section('content')
     <div class="container">
+
+        @if($errors->any())
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    <div class="mb-2">{{$error}}</div>
+                @endforeach
+            </div>
+        @endif
+
         <div class="card">
             <div class="card-header">
                 حدث جديد
