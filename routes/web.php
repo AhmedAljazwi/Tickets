@@ -19,6 +19,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [HomeController::class, 'index']);
 
+Route::get('/users', [UserController::class, 'users']);
 Route::get('/events', [EventController::class, 'index']);
 Route::get('/create-event', [EventController::class, 'create']);
 Route::post('/store-event', [EventController::class, 'store']);
@@ -38,3 +39,6 @@ Route::post('/check', [UserController::class, 'check']);
 Route::get('/logout', [UserController::class, 'logout']);
 
 Route::get('/settings', [UserController::class, 'settings']);
+Route::post('/settings-store', [UserController::class, 'storeSettings']);
+
+Route::get('/reservations', [ReservationController::class, 'showReservations']);

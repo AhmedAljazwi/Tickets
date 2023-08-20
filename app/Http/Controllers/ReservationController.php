@@ -37,4 +37,9 @@ class ReservationController extends Controller
 
         return redirect('/');
     }
+
+    public function showReservations() {
+        $reservations = Ticket::where('user_id', Auth::user()->id)->get();
+        return view('user.event.show-reservations', compact('reservations'));
+    }
 }
